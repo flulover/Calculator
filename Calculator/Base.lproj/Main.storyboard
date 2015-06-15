@@ -55,16 +55,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="operate:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="g9o-W5-9nK"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7DI-In-HKB">
-                                <rect key="frame" x="282" y="452" width="84" height="84"/>
-                                <state key="normal" title="=">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="appendDigit:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="flN-Zq-Ly2"/>
+                                    <action selector="operate:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="CC9-rn-nUj"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ebF-YQ-nYG">
@@ -141,17 +132,20 @@
                                 <state key="normal" title="×">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <connections>
-                                    <action selector="appendDigit:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="lMT-FK-s0y"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vd8-WP-UzS">
                                 <rect key="frame" x="282" y="268" width="84" height="84"/>
                                 <state key="normal" title="−">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7DI-In-HKB">
+                                <rect key="frame" x="282" y="452" width="84" height="84"/>
+                                <state key="normal" title="=">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
-                                    <action selector="appendDigit:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="9ET-tn-qAr"/>
+                                    <action selector="enter:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="GzT-8d-tIz"/>
                                 </connections>
                             </button>
                         </subviews>
