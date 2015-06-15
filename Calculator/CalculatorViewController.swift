@@ -28,24 +28,33 @@ class CalculatorViewController: UIViewController {
     }
     
     @IBAction func operate(sender: UIButton) {
-        let operation = sender.currentTitle!
-        if operation == "+" {
-            operand1 = (calculatorLabel.text! as NSString).doubleValue
-            self.operation = operation
-            
-            inputNumberState = false
-        }
+        operation = sender.currentTitle!
+        operand1 = (calculatorLabel.text! as NSString).doubleValue
+        inputNumberState = false
     }
     
     @IBAction func enter(sender: UIButton) {
-        
-        if self.operation != "" {
+        if operation != "" {
             operand2 = (calculatorLabel.text! as NSString).doubleValue
         }
         
         var result:Double = 0.0;
-        if self.operation == "+" {
-            result = self.operand1 + self.operand2
+        
+        switch operation {
+            case "+":
+                result = operand1 + operand2
+            case "−":
+                result = operand1 - operand2
+            case "×":
+                result = operand1 * operand2
+            case "÷":
+                if operand2 != 0 {
+                    result = operand1 / operand2
+                }else{
+                    self.calculatorLabel.text = "Not a number"
+                }
+            default:
+                println("Invalid operation!")
         }
         
         self.operand1 = result
