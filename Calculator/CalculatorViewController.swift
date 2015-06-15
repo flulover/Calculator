@@ -51,7 +51,8 @@ class CalculatorViewController: UIViewController {
                 if operand2 != 0 {
                     result = operand1 / operand2
                 }else{
-                    self.calculatorLabel.text = "Not a number"
+                    calculatorLabel.text = "Not a number"
+                    resetState()
                 }
             default:
                 println("Invalid operation!")
