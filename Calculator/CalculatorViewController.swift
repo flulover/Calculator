@@ -66,7 +66,19 @@ class CalculatorViewController: UIViewController {
         }else{
             self.calculatorLabel.text = String(format:"%f", result)
         }
+    }
+    
+    @IBAction func allClear(sender: UIButton) {
+        resetState()
+    }
+    
+    private func resetState(){
+        operand1 = 0.0
+        operation = ""
+        operand2 = 0.0
         
+        calculatorLabel.text = "0"
+        inputNumberState = false
     }
 }
 
