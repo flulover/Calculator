@@ -8,11 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		490D49851B2A87D2000232F4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490D49841B2A87D2000232F4 /* AppDelegate.swift */; };
-		490D49871B2A87D2000232F4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490D49861B2A87D2000232F4 /* ViewController.swift */; };
 		490D498A1B2A87D2000232F4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 490D49881B2A87D2000232F4 /* Main.storyboard */; };
 		490D498C1B2A87D2000232F4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 490D498B1B2A87D2000232F4 /* Images.xcassets */; };
 		490D498F1B2A87D2000232F4 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 490D498D1B2A87D2000232F4 /* LaunchScreen.xib */; };
 		490D499B1B2A87D2000232F4 /* CalculatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490D499A1B2A87D2000232F4 /* CalculatorTests.swift */; };
+		4941C23A1B2EA3D2009AE854 /* CalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4941C2391B2EA3D2009AE854 /* CalculatorViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,13 +29,13 @@
 		490D497F1B2A87D2000232F4 /* Calculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Calculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		490D49831B2A87D2000232F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		490D49841B2A87D2000232F4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		490D49861B2A87D2000232F4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		490D49891B2A87D2000232F4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		490D498B1B2A87D2000232F4 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		490D498E1B2A87D2000232F4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		490D49941B2A87D2000232F4 /* CalculatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CalculatorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		490D49991B2A87D2000232F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		490D499A1B2A87D2000232F4 /* CalculatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorTests.swift; sourceTree = "<group>"; };
+		4941C2391B2EA3D2009AE854 /* CalculatorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalculatorViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,8 +77,8 @@
 		490D49811B2A87D2000232F4 /* Calculator */ = {
 			isa = PBXGroup;
 			children = (
+				4941C2391B2EA3D2009AE854 /* CalculatorViewController.swift */,
 				490D49841B2A87D2000232F4 /* AppDelegate.swift */,
-				490D49861B2A87D2000232F4 /* ViewController.swift */,
 				490D49881B2A87D2000232F4 /* Main.storyboard */,
 				490D498B1B2A87D2000232F4 /* Images.xcassets */,
 				490D498D1B2A87D2000232F4 /* LaunchScreen.xib */,
@@ -212,7 +212,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				490D49871B2A87D2000232F4 /* ViewController.swift in Sources */,
+				4941C23A1B2EA3D2009AE854 /* CalculatorViewController.swift in Sources */,
 				490D49851B2A87D2000232F4 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -409,6 +409,7 @@
 				490D49A01B2A87D2000232F4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		490D49A11B2A87D2000232F4 /* Build configuration list for PBXNativeTarget "CalculatorTests" */ = {
 			isa = XCConfigurationList;
@@ -417,6 +418,7 @@
 				490D49A31B2A87D2000232F4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

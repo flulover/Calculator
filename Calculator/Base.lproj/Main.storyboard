@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Calculator View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" customClass="CalculatorViewController" customModule="Calculator" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
@@ -15,10 +16,203 @@
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iE0-Vf-NnV">
+                                <rect key="frame" x="16" y="20" width="568" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pf9-0Y-LjX">
+                                <rect key="frame" x="92" y="360" width="84" height="84"/>
+                                <state key="normal" title="2">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="appendDigit:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="f2V-L5-KUr"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0yq-26-QEj">
+                                <rect key="frame" x="92" y="452" width="84" height="84"/>
+                                <state key="normal" title="0">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="appendDigit:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Qfs-RZ-lJ1"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uhe-zQ-Pmj">
+                                <rect key="frame" x="184" y="360" width="84" height="84"/>
+                                <state key="normal" title="3">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="appendDigit:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="s95-Mf-8lY"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OMT-zU-U2V">
+                                <rect key="frame" x="282" y="360" width="84" height="84"/>
+                                <state key="normal" title="+">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="operate:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="g9o-W5-9nK"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7DI-In-HKB">
+                                <rect key="frame" x="282" y="452" width="84" height="84"/>
+                                <state key="normal" title="=">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="appendDigit:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="flN-Zq-Ly2"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ebF-YQ-nYG">
+                                <rect key="frame" x="0.0" y="176" width="84" height="84"/>
+                                <state key="normal" title="7">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="appendDigit:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="bhS-ta-x7M"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jgT-7K-VwW">
+                                <rect key="frame" x="92" y="176" width="84" height="84"/>
+                                <state key="normal" title="8">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="appendDigit:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="uyL-c9-hrq"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WN0-tc-9ZR">
+                                <rect key="frame" x="184" y="176" width="84" height="84"/>
+                                <state key="normal" title="9">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="appendDigit:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="7iM-a9-qUu"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r28-0T-kjQ">
+                                <rect key="frame" x="0.0" y="268" width="84" height="84"/>
+                                <state key="normal" title="4">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="appendDigit:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="OZr-bf-mIC"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="doT-Kh-FaL">
+                                <rect key="frame" x="92" y="268" width="84" height="84"/>
+                                <state key="normal" title="5">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="appendDigit:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="9Cm-La-6Qi"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YiN-XP-HIr">
+                                <rect key="frame" x="184" y="268" width="84" height="84"/>
+                                <state key="normal" title="6">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="appendDigit:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="9sr-lh-ZH1"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qfp-mi-ns3">
+                                <rect key="frame" x="0.0" y="360" width="84" height="84"/>
+                                <state key="normal" title="1">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="appendDigit:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="E3L-R4-Kg3"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kdj-9K-yRG">
+                                <rect key="frame" x="282" y="84" width="84" height="84"/>
+                                <state key="normal" title="÷">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jvB-ad-rXc">
+                                <rect key="frame" x="282" y="176" width="84" height="84"/>
+                                <state key="normal" title="×">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="appendDigit:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="lMT-FK-s0y"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vd8-WP-UzS">
+                                <rect key="frame" x="282" y="268" width="84" height="84"/>
+                                <state key="normal" title="−">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="appendDigit:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="9ET-tn-qAr"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="OMT-zU-U2V" firstAttribute="height" secondItem="Pf9-0Y-LjX" secondAttribute="height" id="283-25-vAl"/>
+                            <constraint firstItem="OMT-zU-U2V" firstAttribute="width" secondItem="Kdj-9K-yRG" secondAttribute="width" id="7AK-qy-9zT"/>
+                            <constraint firstItem="OMT-zU-U2V" firstAttribute="height" secondItem="doT-Kh-FaL" secondAttribute="height" id="82r-gs-gCL"/>
+                            <constraint firstItem="OMT-zU-U2V" firstAttribute="width" secondItem="Pf9-0Y-LjX" secondAttribute="width" id="9NQ-h2-44w"/>
+                            <constraint firstItem="OMT-zU-U2V" firstAttribute="height" secondItem="jvB-ad-rXc" secondAttribute="height" id="AWH-4l-BBB"/>
+                            <constraint firstItem="OMT-zU-U2V" firstAttribute="width" secondItem="jvB-ad-rXc" secondAttribute="width" id="BI6-ec-yCZ"/>
+                            <constraint firstItem="iE0-Vf-NnV" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="BnF-MX-U7W"/>
+                            <constraint firstItem="OMT-zU-U2V" firstAttribute="height" secondItem="Kdj-9K-yRG" secondAttribute="height" id="DSx-CU-gTP"/>
+                            <constraint firstItem="OMT-zU-U2V" firstAttribute="height" secondItem="7DI-In-HKB" secondAttribute="height" id="MAb-zZ-zis"/>
+                            <constraint firstItem="OMT-zU-U2V" firstAttribute="height" secondItem="r28-0T-kjQ" secondAttribute="height" id="Mfn-8s-F0B"/>
+                            <constraint firstItem="OMT-zU-U2V" firstAttribute="height" secondItem="YiN-XP-HIr" secondAttribute="height" id="Qct-g7-xWa"/>
+                            <constraint firstItem="iE0-Vf-NnV" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="RUF-18-tza"/>
+                            <constraint firstItem="iE0-Vf-NnV" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="Thx-Q5-6js"/>
+                            <constraint firstItem="OMT-zU-U2V" firstAttribute="width" secondItem="Qfp-mi-ns3" secondAttribute="width" id="Yci-bz-CAj"/>
+                            <constraint firstItem="OMT-zU-U2V" firstAttribute="width" secondItem="uhe-zQ-Pmj" secondAttribute="width" id="ZqK-ff-Lgf"/>
+                            <constraint firstItem="OMT-zU-U2V" firstAttribute="width" secondItem="doT-Kh-FaL" secondAttribute="width" id="bq3-xk-33h"/>
+                            <constraint firstItem="OMT-zU-U2V" firstAttribute="width" secondItem="7DI-In-HKB" secondAttribute="width" id="dtT-1T-pZC"/>
+                            <constraint firstItem="OMT-zU-U2V" firstAttribute="height" secondItem="uhe-zQ-Pmj" secondAttribute="height" id="f0r-tN-991"/>
+                            <constraint firstItem="OMT-zU-U2V" firstAttribute="height" secondItem="Qfp-mi-ns3" secondAttribute="height" id="glp-Nm-2f3"/>
+                            <constraint firstItem="OMT-zU-U2V" firstAttribute="height" secondItem="0yq-26-QEj" secondAttribute="height" id="hy7-zs-FZX"/>
+                            <constraint firstItem="OMT-zU-U2V" firstAttribute="width" secondItem="vd8-WP-UzS" secondAttribute="width" id="jx2-7n-uBr"/>
+                            <constraint firstItem="OMT-zU-U2V" firstAttribute="width" secondItem="YiN-XP-HIr" secondAttribute="width" id="kW8-C6-kid"/>
+                            <constraint firstItem="OMT-zU-U2V" firstAttribute="height" secondItem="ebF-YQ-nYG" secondAttribute="height" id="niB-82-ngE"/>
+                            <constraint firstItem="OMT-zU-U2V" firstAttribute="width" secondItem="jgT-7K-VwW" secondAttribute="width" id="pLj-Ts-eIy"/>
+                            <constraint firstItem="OMT-zU-U2V" firstAttribute="height" secondItem="jgT-7K-VwW" secondAttribute="height" id="piz-wZ-z7g"/>
+                            <constraint firstItem="OMT-zU-U2V" firstAttribute="height" secondItem="vd8-WP-UzS" secondAttribute="height" id="r8i-oY-mJ5"/>
+                            <constraint firstItem="OMT-zU-U2V" firstAttribute="width" secondItem="ebF-YQ-nYG" secondAttribute="width" id="tGq-M2-4sB"/>
+                            <constraint firstItem="OMT-zU-U2V" firstAttribute="width" secondItem="r28-0T-kjQ" secondAttribute="width" id="tjx-43-wp4"/>
+                            <constraint firstItem="OMT-zU-U2V" firstAttribute="width" secondItem="0yq-26-QEj" secondAttribute="width" id="uUu-tq-eYe"/>
+                            <constraint firstItem="OMT-zU-U2V" firstAttribute="width" secondItem="WN0-tc-9ZR" secondAttribute="width" id="yZm-S2-leH"/>
+                            <constraint firstItem="OMT-zU-U2V" firstAttribute="height" secondItem="WN0-tc-9ZR" secondAttribute="height" id="zD2-lg-zyQ"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="calculatorLabel" destination="iE0-Vf-NnV" id="dPB-RL-HUT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Fat-Yj-P7Y">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="nQE-PP-Wu4" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="dQY-KR-kw3"/>
+                        <viewControllerLayoutGuide type="bottom" id="fQD-hI-oGY"/>
+                    </layoutGuides>
+                    <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="ntY-Be-5wk">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <toolbarItems/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Q34-N3-pcQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
     </scenes>
