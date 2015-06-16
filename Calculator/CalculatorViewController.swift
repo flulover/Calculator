@@ -51,7 +51,7 @@ class CalculatorViewController: UIViewController {
         }
     }
     
-    @IBAction func allClear(sender: UIButton) {
+    @IBAction func clear(sender: UIButton) {
         resetState()
     }
     

@@ -163,7 +163,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="allClear:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="KII-dQ-9PE"/>
+                                    <action selector="clear:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="c6m-s6-LIz"/>
                                 </connections>
                             </button>
                         </subviews>
