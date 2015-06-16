@@ -64,4 +64,14 @@ class CalculatorViewController: UIViewController {
         calculatorLabel.text = "0"
         inputNumberState = false
     }
+    
+    
+    @IBAction func toggleSigned(sender: UIButton) {
+        let value = getDisplayValue()
+        if value > 0 {
+            calculatorLabel.text = "-" + calculatorLabel.text
+        }else{
+            calculatorLabel.text = (calculatorLabel.text as NSString).substringFromIndex(1)
+        }
+    }
 }

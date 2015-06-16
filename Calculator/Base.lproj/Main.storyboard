@@ -166,6 +166,15 @@
                                     <action selector="clear:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="c6m-s6-LIz"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1JF-JM-Tpv">
+                                <rect key="frame" x="92" y="84" width="84" height="84"/>
+                                <state key="normal" title="+/-">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="toggleSigned:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="SOC-rl-Uf9"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
