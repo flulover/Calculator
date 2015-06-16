@@ -13,9 +13,7 @@ class CalculatorViewController: UIViewController {
     @IBOutlet weak var calculatorLabel: UITextField!
     
     var inputNumberState:Bool = false;
-    var operand1:Double = 0.0;
-    var operand2:Double = 0.0;
-    var operation:String = "";
+    var calculator:Calculator = Calculator()
     
     @IBAction func appendDigit(sender: UIButton) {
         let digit = sender.currentTitle!
@@ -30,8 +28,8 @@ class CalculatorViewController: UIViewController {
     @IBAction func operate(sender: UIButton) {
         calculate()
         
-        operation = sender.currentTitle!
-        operand1 = (calculatorLabel.text! as NSString).doubleValue
+        calculator.operation = sender.currentTitle!
+        calculator.operand1 = getDisplayValue()
         inputNumberState = false
     }
     
@@ -40,35 +38,12 @@ class CalculatorViewController: UIViewController {
     }
     
     private func calculate(){
-        if operation == "" {
+        if !calculator.hasOperation() {
             return
         }
         
-        var result:Double = 0.0;
-        operand2 = (calculatorLabel.text! as NSString).doubleValue
-        
-        switch operation {
-            case "+":
-                result = operand1 + operand2
-            case "−":
-                result = operand1 - operand2
-            case "×":
-                result = operand1 * operand2
-            case "÷":
-                if operand2 != 0 {
-                    result = operand1 / operand2
-                }else{
-                    calculatorLabel.text = "Not a number"
-                    resetState()
-                }
-            default:
-                println("Invalid operation!")
-        }
-        
-        self.operand1 = result
-        self.operation = ""
-        self.operand2 = 0.0
-        
+        calculator.operand2 = getDisplayValue()
+        var result:Double = calculator.calculate();
         if result == floor(result) {
             self.calculatorLabel.text = String(format:"%d", Int(result))
         }else{
@@ -80,13 +55,13 @@ class CalculatorViewController: UIViewController {
         resetState()
     }
     
+    private func getDisplayValue() -> Double{
+        return (calculatorLabel.text! as NSString).doubleValue
+    }
+    
     private func resetState(){
-        operand1 = 0.0
-        operation = ""
-        operand2 = 0.0
-        
+        calculator.reset()
         calculatorLabel.text = "0"
         inputNumberState = false
     }
 }
-
